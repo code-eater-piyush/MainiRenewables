@@ -1,0 +1,62 @@
+.mission {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .mission-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .mission h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: orange;
+  }
+  
+  .mission p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #333;
+  }
+  
+  .mission-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .mission-item {
+    flex: 1;
+    min-width: 250px;
+    margin: 20px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .mission-item:hover {
+    transform: translateY(-10px);
+  }
+  
+  .mission-icon {
+    font-size: 3rem;
+    color: orange;
+    margin-bottom: 20px;
+  }
+  
+  .mission-item h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: orange;
+  }
+  
+  .mission-item p {
+    font-size: 1rem;
+    color: #555;
+  }
+  

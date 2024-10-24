@@ -1,0 +1,181 @@
+/* General Styles for Contact Page */
+.contact {
+    padding: 60px 60px;
+  }
+  
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  
+  h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+  
+  .form-container {
+    background-color: #f9f9f9;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Full-width for the contact form */
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  form label {
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  
+  form input, form select {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  form input[type="submit"], form button {
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  form input[type="submit"]:hover, form button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Dropdown Styling */
+  form select {
+    height: 55px; /* Increased height */
+    margin-bottom: 25px; /* Increased bottom margin */
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 0 15px;
+    font-size: 1.1rem;
+    appearance: none;
+    transition: all 0.3s ease; /* Smooth transitions */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%234CAF50' d='M0 7l10 10L20 7z'/%3E%3C/svg%3E"); /* Custom dropdown arrow */
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+  }
+  
+  form select:hover,
+  form select:focus {
+    border-color: #4CAF50; /* Change border color on hover/focus */
+    background-color: #f0f0f0; /* Change background slightly */
+  }
+  
+  /* Info Section */
+  .info {
+    background-color: #f4f4f4;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    text-align: center;
+  }
+  
+  .info p {
+    margin: 10px 0;
+  }
+  
+  .info a {
+    color: #4CAF50;
+    text-decoration: none;
+  }
+  
+  .info a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Map Section */
+  .map {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+  }
+  
+  /* FAQs Section */
+  .faqs {
+    width: 100%;
+  }
+  
+  .faq-question {
+    background-color: #e0e0e0;
+    padding: 15px 20px;
+    margin: 10px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .faq-question:hover {
+    background-color: #d1d1d1;
+  }
+  
+  .faq-answer {
+    display: none;
+    background-color: #f9f9f9;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .faq-answer.show {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out; /* Smooth appearance */
+  }
+  
+  /* FAQ Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateX(-10px); /* Sliding in from the left */
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Scroll-in Animation */
+  .slide-in {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.8s ease;
+  }
+  
+  .slide-in.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .contact-container {
+      padding: 0 20px;
+    }
+  
+    .form-container, .info, .map, .faqs {
+      width: 100%; /* Full-width for responsive layout */
+    }
+  }
+  

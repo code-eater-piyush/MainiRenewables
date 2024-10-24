@@ -1,0 +1,138 @@
+.home {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Hide any overflow content */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    padding: 0 20px;
+    opacity: 0; /* Start hidden */
+    animation: fadeIn 1.5s ease-in-out forwards; /* Smooth fade-in */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Video Background */
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire area */
+    z-index: -1; /* Send the video behind other content */
+    opacity: 0; /* Start hidden */
+    animation: fadeInVideo 2s ease-in-out forwards; /* Fade-in for video */
+}
+
+/* Video fade-in animation */
+@keyframes fadeInVideo {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Main content */
+.home-img img {
+    width: 45vw;
+    height: auto; /* Adjust height to maintain aspect ratio */
+    border-radius: 10px; /* Optional: for rounded corners */
+    filter: brightness(0.8);
+    opacity: 0; /* Start hidden */
+    animation: slideIn 1.5s ease-in-out 0.5s forwards; /* Slide-in effect for image */
+}
+
+/* Image slide-in animation */
+@keyframes slideIn {
+    0% {
+        transform: translateX(-50px); /* Start off-screen */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0); /* Slide to original position */
+        opacity: 1;
+    }
+}
+
+.home-content {
+    color: #333;
+    opacity: 0; /* Start hidden */
+    animation: slideInText 1.5s ease-in-out 1s forwards; /* Delayed slide-in for text */
+}
+
+/* Slide-in effect for text */
+@keyframes slideInText {
+    0% {
+        transform: translateX(50px); /* Start off-screen */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0); /* Slide to original position */
+        opacity: 1;
+    }
+}
+
+/* Headline styling */
+.home-content h1 {
+    font-size: 4.5rem;
+    margin-bottom: 50px;
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Subheadline styling */
+.home-content h2 {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .home-img img {
+        width: 60vw;
+        height: auto;
+    }
+
+    .home-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .home-content h2 {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 994px) {
+    .home {
+        height: auto;
+        padding: 20px;
+    }
+
+    .home-img img {
+        width: 50vw;
+    }
+
+    .home-content h1 {
+        font-size: 2rem;
+    }
+
+    .home-content h2 {
+        font-size: 1.125rem;
+    }
+}

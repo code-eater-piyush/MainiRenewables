@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar-container {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Poppins";
+  padding: 10px 20px;
+  background-color: #fff;
+  position: sticky; /* Sticky Navbar */
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transition for smooth changes */
+}
+
+/* Add a box-shadow when scrolled */
+.navbar.scrolled {
+  background-color: #f4f4f4; /* Light background on scroll */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar Image */
+.navbar-logo img {
+  height: 60px;
+  width: 220px;
+  margin: 5px 10px;
+}
+
+.menu-list {
+  width: 75vw;
+}
+
+.menu-list ul {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-right: 2rem;
+  margin-left: 10rem;
+}
+
+.navbar-menu {
+  align-items: center;
+}
+
+.menu-list ul li {
+  margin: 0 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: rgba(9, 112, 9, 0.593);
+  position: relative;
+  transition: color 0.3s ease; /* Smooth color change on hover */
+}
+
+/* Hover effect: underline transition */
+.menu-list ul li::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: rgba(9, 112, 9, 0.8);
+  left: 0;
+  bottom: -5px;
+  transition: width 0.3s ease;
+}
+
+.menu-list ul li:hover::after {
+  width: 100%;
+}
+
+.menu-list ul li:hover {
+  color: rgba(9, 112, 9, 0.8);
+}
+
+.menu-list ul li:active {
+  transform: scale(0.95); /* Click effect: subtle shrink */
+  transition: transform 0.2s ease;
+}
+
+.menu-list ul li button {
+  display: contents;
+  font-size: 20px;
+}
+
+.menu-list ul li button:hover {
+  cursor: pointer;
+  color: rgba(9, 112, 9, 0.593);
+}
+
+.menu-list ul:last-child {
+  display: none;
+}
+
+.navbar-menu li a {
+  color: black;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-menu li a:hover {
+  color: rgba(9, 112, 9, 0.8);
+}
+
+/* src/components/Navbar.css */
+
+.navbar-container.light .navbar {
+  background-color: #fff;
+  color: #000;
+}
+
+.navbar-container.dark .navbar {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Responsive Adjustments */
+@media only screen and (max-width: 952px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+  }
+  .menu-list {
+    width: 5rem;
+  }
+  .menu-list ul:first-child {
+    display: none;
+  }
+  .menu-list ul:last-child {
+    display: contents;
+    font-size: 30px;
+  }
+  .menu-list ul li:hover {
+    cursor: pointer;
+  }
+}
+
+/* Sticky Effect on Scroll (JS Trigger) */
+.navbar.scrolled {
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

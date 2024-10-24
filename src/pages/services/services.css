@@ -1,0 +1,85 @@
+#services {
+  background-color: #f4f4f4; /* Light background color */
+  padding: 50px 20px; /* Add padding for spacing */
+}
+
+.services {
+  max-width: 1200px; /* Centered container */
+  margin: auto; /* Centering */
+  text-align: center; /* Center the text */
+}
+
+.services-container {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: orange;
+}
+
+.services-content {
+  display: flex; /* Flexbox layout for the service items */
+  flex-direction: column; /* Stack service items vertically */
+}
+
+.service-item {
+  background-color: #ffffff; /* White background for cards */
+  border: 1px solid #ddd; /* Light border for cards */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin: 10px 0; /* Margin between cards */
+  display: flex; /* Flex container for layout */
+  align-items: center; /* Center vertically */
+  justify-content: space-between; /* Space between image and text */
+  padding: 20px;
+  transition: transform 0.3s; /* Animation effect */
+}
+
+.service-item:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.service-text {
+  width: 50%; /* Half width for the text */
+  padding: 0 20px; /* Add some padding */
+}
+
+.service-text h2 {
+  font-size: 2.5rem; /* Font size for titles */
+  color: #333; /* Dark text color */
+  margin: 10px 0; /* Space above and below titles */
+}
+
+.service-text p {
+  font-size: 1.2rem; /* Font size for descriptions */
+  color: #666; /* Gray text color */
+  margin-bottom: 20px; /* Space below the description */
+}
+
+.service-icon-container {
+  width: 50%; /* Half width for the image */
+  overflow: hidden; /* Hide overflow to ensure image fits */
+}
+
+.service-icon {
+  width: 100%; /* Full width for the image */
+  height: auto; /* Automatic height for the image */
+  object-fit: cover; /* Cover the container while maintaining aspect ratio */
+}
+
+.cta-button {
+  background-color: #0f3408; /* Primary button color */
+  color: white; /* Button text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded button corners */
+  padding: 10px 15px; /* Button padding */
+  cursor: pointer; /* Pointer on hover */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.cta-button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Reverse layout for odd items */
+.service-item.reverse {
+  flex-direction: row-reverse; /* Reverse the layout, image on the left */
+}
