@@ -1,11 +1,12 @@
 /* General Styles for Contact Page */
 .contact {
-    padding: 60px 60px;
+    padding: 30px 60px;
   }
   
   .contact-container {
     display: flex;
     flex-direction: column;
+    background-color: ;
     align-items: center;
     justify-content: center;
     gap: 40px;
@@ -22,9 +23,8 @@
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-    margin-left: 20px;
-    margin-bottom: 20px;
-    width: 100%; /* Full-width for the contact form */
+    margin: 40px 20px 0 20px;
+    width: 90%; /* Full-width for the contact form */
   }
 
   .upper-area{
@@ -32,12 +32,18 @@
     flex-direction: row;
   }
 
-  .upper-area .right-side .tagline p{
-    font-size: 8rem;
+  .right-side{
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    gap: 30px;
   }
 
+  .upper-area .right-side .tagline p{
+    font-size: 6rem;
+    margin-bottom: 30px;
+  }
 
-  
   form {
     display: flex;
     flex-direction: column;

@@ -38,7 +38,7 @@ const Contact = () => {
           <div className="upper-area">
             <div className="right-side">
               <div className="tagline">
-                <p>Let's Have A Talk</p>
+                <p>Let's Have A Chat!</p>
               </div>
             <div className="info slide-in">
               <h2>
@@ -55,6 +55,18 @@ const Contact = () => {
                 services.
               </p>
             </div>
+            <div className="map slide-in">
+            <h2>Site Location</h2>
+            <iframe
+              title="Google Map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345092553!2d144.95373631531638!3d-37.81627997975102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11f4ab%3A0x5045675218ceed30!2sMelbourne%20Victoria%20Australia!5e0!3m2!1sen!2sus!4v1632447455770!5m2!1sen!2sus"
+              width="100%"
+              height="300"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
             </div>
 
             <div className="form-container slide-in">
@@ -107,18 +119,6 @@ const Contact = () => {
                 <button type="submit">Submit</button>
               </form>
             </div>
-          </div>
-          <div className="map slide-in">
-            <h2>Site Location</h2>
-            <iframe
-              title="Google Map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345092553!2d144.95373631531638!3d-37.81627997975102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11f4ab%3A0x5045675218ceed30!2sMelbourne%20Victoria%20Australia!5e0!3m2!1sen!2sus!4v1632447455770!5m2!1sen!2sus"
-              width="100%"
-              height="300"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-            ></iframe>
           </div>
 
           <div className="faqs slide-in">
