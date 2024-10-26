@@ -22,8 +22,21 @@
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+    margin-bottom: 20px;
     width: 100%; /* Full-width for the contact form */
   }
+
+  .upper-area{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .upper-area .right-side .tagline p{
+    font-size: 8rem;
+  }
+
+
   
   form {
     display: flex;
