@@ -1,0 +1,71 @@
+/* Main section container */
+.solutions-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+/* Each solution card */
+.solution-card {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    max-width: 1000px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.solution-card:hover {
+    transform: scale(1.02);
+}
+
+/* Image styling */
+.solution-card img {
+    width: 40%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Text information */
+.solution-info {
+    padding: 20px;
+    width: 60%;
+}
+
+.solution-info h2 {
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+}
+
+.solution-info p {
+    font-size: 16px;
+    color: #666;
+    margin: 10px 0 0;
+}
+
+/* "More" button styling */
+.more-solutions {
+    margin-top: 20px;
+}
+
+.more-solutions button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #ff6600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.more-solutions button:hover {
+    background-color: #e65c00;
+}

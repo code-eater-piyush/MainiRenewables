@@ -6,9 +6,8 @@ import Footer from './components/footer/Footer';
 import Home from './pages/home/Home';
 import About from './pages/about/About';
 import Mission from './pages/mission/Mission';
-import Vision from './pages/vision/Vision';
-import Services from './pages/services/Services';
 import Contact from './pages/contact/contact';
+import Solutions from './pages/Solutions/solutions';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,7 +25,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/mission" element={<Mission />} />
-          <Route path="/vision" element={<Vision />} />
+          <Route path="/solutions" element={<Solutions />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
