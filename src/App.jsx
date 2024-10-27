@@ -8,6 +8,7 @@ import About from './pages/about/About';
 import Mission from './pages/mission/Mission';
 import Contact from './pages/contact/contact';
 import Solutions from './pages/Solutions/solutions';
+import PartnersPage from './pages/partners/partners';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,6 +28,7 @@ function App() {
           <Route path="/mission" element={<Mission />} />
           <Route path="/solutions" element={<Solutions />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/partners" element={<PartnersPage />} />
         </Routes>
         <Footer />
       </div>

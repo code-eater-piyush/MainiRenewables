@@ -1,0 +1,109 @@
+.partners-page {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+  }
+  
+  .partners-header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+    margin-left: 10px;
+    margin-right: 100px
+
+  }
+  
+  .partners-header h2 {
+    font-size: 30px;
+    font-weight: 650;
+    color: #333;
+  }
+  
+  .partners-header h3 {
+    font-size: 30px;
+    font-weight: 650;
+    max-width:70%;
+    color: #333;
+  }
+  
+  .partners-header p {
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+    max-width: 600px;
+    line-height: 1.6;
+    margin: 0 auto;
+  }
+
+  .partners-bottom-section{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+  }
+  
+  .partners-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 60px;
+  }
+  
+  .partner-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    max-height: 80px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .partner-card:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .partners-network {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    margin-right: 300px;
+    gap: 10px;
+  }
+  
+  .partners-network h4 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .become-partner-btn {
+    padding: 10px 20px;
+    background-color: green;
+    color: #fff;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  .become-partner-btn:hover {
+    background-color: rgb(8, 162, 8);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); 
+  }
+  
+  .become-partner-btn:active {
+    transform: scale(0.95); /* Slightly shrinks the button */
+  }
+  
