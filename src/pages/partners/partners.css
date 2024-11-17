@@ -68,7 +68,64 @@
   .partner-card:hover {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
   }
+
   
+.blurred-background {
+  filter: blur(4px);
+  transition: filter 0.3s ease;
+}
+
+.blurred-background.active {
+  filter: blur(4px);
+  transition: filter 0.3s ease;
+}
+
+.backdrop.show {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.popup-options {
+  display: none; /* Hidden by default */
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff; /* White background for popup */
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 90%;
+  overflow-y: auto;
+  opacity: 0; /* Start with zero opacity */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition for both opacity and scaling */
+}
+
+.popup-options.show {
+  display: flex; /* Shows the popup when 'show' class is added */
+  opacity: 1; /* Makes the popup fully visible */
+  transform: scale(1); /* Ensures it's at normal scale */
+}
+
+/* Optional: Add a small scale transformation when showing the popup */
+.popup-options {
+  transform: scale(0.9); /* Start with a slight scale for a zoom-in effect */
+}
+
+.partners-list{
+  display: flex;
+  gap: 30px;
+}
+
+.partners-image{
+  height: fit-content;
+  width: fit-content;
+}
+
   .partners-network {
     display: flex;
     flex-direction: column;
