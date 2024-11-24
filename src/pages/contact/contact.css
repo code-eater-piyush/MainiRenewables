@@ -134,6 +134,7 @@
   /* FAQs Section */
   .faqs {
     width: 100%;
+    margin-bottom: 10vh;
   }
   
   .faq-question {
@@ -160,7 +161,7 @@
   
   .faq-answer.show {
     display: block;
-    animation: fadeIn 0.3s ease-in-out; /* Smooth appearance */
+    animation: fadeIn 0.5s ease-in-out; /* Smooth appearance */
   }
   
   /* FAQ Animation */
