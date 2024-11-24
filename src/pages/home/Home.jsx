@@ -5,13 +5,13 @@ import turbineImage from "../../assets/turbine.avif";
 import Services from '../services/Services';
 
 const Home = () => {
-    const [isVideoActive, setIsVideoActive] = useState(true);
+    const [isVideoActive, setIsVideoActive] = useState(false);
 
     useEffect(() => {
         // Toggle between video and image every 10 seconds
         const interval = setInterval(() => {
             setIsVideoActive((prev) => !prev);
-        }, 5000); 
+        }, 8000); 
 
         return () => clearInterval(interval); // Clean up on unmount
     }, []);
