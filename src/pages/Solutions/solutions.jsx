@@ -1,5 +1,6 @@
 import React from 'react';
 import './solutions.css';
+import Mission from '../mission/Mission';
 
 const Solutions = () => {
     return (
@@ -37,6 +38,7 @@ const Solutions = () => {
                     More &gt;
                 </button>
             </div>
+            <Mission/>
         </div>
     );
 };

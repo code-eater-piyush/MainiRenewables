@@ -1,4 +1,4 @@
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FaTwitter, FaLinkedinIn } from 'react-icons/fa';
 import './footer.css';
 
 const Footer = () => {
@@ -22,23 +22,20 @@ const Footer = () => {
         <div className="footer-section">
           <h2>Contact Us</h2>
           <ul>
-            <li><a href="mailto:info@brainsmedia.com">info@brainsmedia.com</a></li>
-            <li><a href="tel:+911234567890">+91 1234567890</a></li>
-            <li><a href="#location">1234 Street, City, Country</a></li>
+            <li><a href="mailto:info@brainsmedia.com">info@MainiRenewables.com</a></li>
+            <li><a href="#location">Mumbai & Pune</a></li>
           </ul>
         </div>
         <div className="footer-section">
           <h2>Follow Us</h2>
           <div className="social-icons">
-            <a href="https://www.facebook.com/brainsmediasolutions" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
-            <a href="https://x.com/brainsmedia2012" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
-            <a href="https://www.instagram.com/Brains_Media_Solutions/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-            <a href="https://www.linkedin.com/company/brains-media-solutions-pvt-ltd-/" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
+            <a href="https://x.com/Maini90750821" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
+            <a href="https://www.linkedin.com/company/maini-renewables/?viewAsMember=true" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
           </div>
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; 2024 Brains Media Solutions. All rights reserved.</p>
+        <p>&copy; ©2024 by Maini Renewables Pvt. Ltd.</p>
       </div>
     </footer>
   );

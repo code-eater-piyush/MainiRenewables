@@ -13,7 +13,7 @@
   .mission h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: orange;
+    color: #333;
   }
   
   .mission p {
@@ -45,14 +45,14 @@
   
   .mission-icon {
     font-size: 3rem;
-    color: orange;
+    color: darkgreen;
     margin-bottom: 20px;
   }
   
   .mission-item h2 {
     font-size: 1.5rem;
     margin-bottom: 10px;
-    color: orange;
+    color: #333;
   }
   
   .mission-item p {
