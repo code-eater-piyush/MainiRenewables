@@ -19,7 +19,7 @@
   justify-content: space-between;
   font-family: "Poppins";
   padding: 10px 20px;
-  background-color: #FFFFFF;
+  background-color: aliceblue;
   position: sticky; /* Sticky Navbar */
   top: 0;
   z-index: 1000;
@@ -34,9 +34,8 @@
 
 /* Navbar Image */
 .navbar-logo img {
-  height: 60px;
-  width: 250px;
-  margin: 5px 10px;
+  height: 70px;
+  width: 280px;
 }
 
 .menu-list {
@@ -59,9 +58,8 @@
 .menu-list ul li {
   margin: 0 1rem;
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: 520;
   cursor: pointer;
-  color: rgba(9, 112, 9, 0.593);
   position: relative;
   transition: color 0.3s ease; /* Smooth color change on hover */
 }
@@ -106,7 +104,7 @@
 }
 
 .navbar-menu li a {
-  color: black;
+  color: #333;
   text-decoration: none;
   font-size: 1.2rem;
   transition: color 0.3s ease;

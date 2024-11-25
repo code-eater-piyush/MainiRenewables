@@ -80,7 +80,7 @@ const PartnersPage = () => {
           <div className={`popup-options ${showOptions ? "show" : ""}`}>
             <div className="partners-list">
               {partners.map((partner, index) => (
-                <img key={index} src={partner} alt={`Partner ${index}`} className="partner-image"/>
+               <img key={index} src={partner} alt={`Partner ${index}`} className="partner-image"/>
               ))}
             </div>
           </div>

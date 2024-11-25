@@ -10,9 +10,14 @@
 }
 
 .services-container {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   color: orange;
+}
+
+.services-container h1 {
+  font-size: 3.5rem;
+  margin-bottom: 50px;
+  color: #333;
 }
 
 .services-content {

@@ -21,12 +21,12 @@ const Mission = () => {
             <p>High recyclability: turning waste into resources for a sustainable future</p>
           </div>
           <div className="mission-item">
-            <FaTree size={50} color="green" className="mission-icon" />
+            <FaTree size={50} className="mission-icon" />
             <h2>Ecofriendly</h2>
             <p>Harnessing clean energy through innovative turbine design for a sustainable future</p>
           </div>
           <div className="mission-item">
-            <FaTint size={50} color="green" className="mission-icon" />
+            <FaTint size={50} className="mission-icon" />
             <h2>Low Flow Compatible</h2>
             <p>Engineered for efficiency: low flow compatibility for optimal performance</p>
           </div>
