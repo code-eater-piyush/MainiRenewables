@@ -9,16 +9,33 @@ import Mission from './pages/mission/Mission';
 import Contact from './pages/contact/contact';
 import Solutions from './pages/Solutions/solutions';
 import PartnersPage from './pages/partners/partners';
+import { useEffect } from 'react';
+import Preloader from './components/preloader/preloader';
+import './index.css'
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      document.querySelector(".preloader").classList.add("fade-out");
+      setTimeout(() => setLoading(false), 500); // Match fade-out duration
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <Router>
+    <>
+    {loading ? (
+      <Preloader/>
+    ) : (
+      <Router>
       <div>
         <Navbar toggleMenu={toggleMenu} />
         <Sidebar isMenuOpen={isMenuOpen} />
@@ -33,6 +50,8 @@ function App() {
         <Footer />
       </div>
     </Router>
+    ) }
+    </>
   );
 }
 

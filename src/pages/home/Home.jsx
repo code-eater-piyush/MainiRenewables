@@ -26,7 +26,7 @@ const Home = () => {
                     muted
                     className={`hero-video ${isVideoActive ? 'visible' : 'hidden'}`}
                 >
-                    <source src="background.mp4" type="video/mp4" />
+                    <source src="background.mp4" type="video/mp4"/>
                 </video>
 
                 {/* Image Background */}

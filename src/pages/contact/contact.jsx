@@ -5,6 +5,7 @@ import "./contact.css";
 const Contact = () => {
   const contentRef = useRef(null);
   const [activeQuestion, setActiveQuestion] = useState(null);
+  const [propertyType, setPropertyType] = useState('hydro');
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -40,33 +41,33 @@ const Contact = () => {
               <div className="tagline">
                 <p>Let's Have A Chat!</p>
               </div>
-            <div className="info slide-in">
-              <h2>
-                <FaEnvelope /> Info Email
-              </h2>
-              <p>
-                Email us at:{" "}
-                <a href="mailto:info@mainirenewables.com">
-                  info@mainirenewables.com
-                </a>
-              </p>
-              <p>
-                We’re here to assist you with any inquiries regarding our
-                services.
-              </p>
-            </div>
-            <div className="map slide-in">
-            <h2>Site Location</h2>
-            <iframe
-              title="Google Map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345092553!2d144.95373631531638!3d-37.81627997975102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11f4ab%3A0x5045675218ceed30!2sMelbourne%20Victoria%20Australia!5e0!3m2!1sen!2sus!4v1632447455770!5m2!1sen!2sus"
-              width="100%"
-              height="300"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-            ></iframe>
-          </div>
+              <div className="info slide-in">
+                <h2>
+                  <FaEnvelope /> Info Email
+                </h2>
+                <p>
+                  Email us at:{" "}
+                  <a href="mailto:info@mainirenewables.com">
+                    info@mainirenewables.com
+                  </a>
+                </p>
+                <p>
+                  We’re here to assist you with any inquiries regarding our
+                  services.
+                </p>
+              </div>
+              <div className="map slide-in">
+                <h2>Site Location</h2>
+                <iframe
+                  title="Google Map"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345092553!2d144.95373631531638!3d-37.81627997975102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11f4ab%3A0x5045675218ceed30!2sMelbourne%20Victoria%20Australia!5e0!3m2!1sen!2sus!4v1632447455770!5m2!1sen!2sus"
+                  width="100%"
+                  height="300"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                ></iframe>
+              </div>
             </div>
 
             <div className="form-container slide-in">
@@ -90,24 +91,39 @@ const Contact = () => {
                 />
 
                 {/* Additional Dropdowns */}
-                <label>Type of Property - Hydro:</label>
-                <select name="hydro-type" required>
-                  <option value="canal">Canal</option>
-                  <option value="river">River</option>
-                  <option value="existing-power-plant">
-                    Existing Power Plant
-                  </option>
-                  <option value="tidal">Tidal</option>
+                <label>Type of Property</label>
+                <select name="property-name" required onChange={(e) => setPropertyType(e.target.value)}>
+                  <option value="hydro">Hydro</option>
+                  <option value="wind" >Wind</option>
                 </select>
 
-                <label>Type of Property - Wind:</label>
-                <select name="wind-type" required>
-                  <option value="rooftop">Rooftop</option>
-                  <option value="existing">Existing</option>
-                  <option value="wind-farm">Wind Farm</option>
-                  <option value="highway">Highway</option>
-                  <option value="open-farm">Open Farm</option>
-                </select>
+                {propertyType === "hydro" && (
+                  <div className="property-selected">
+                    <label>Type of Property - Hydro:</label>
+                    <select name="hydro-type" required>
+                      <option value="canal">Canal</option>
+                      <option value="river">River</option>
+                      <option value="existing-power-plant">
+                        Existing Power Plant
+                      </option>
+                      <option value="tidal">Tidal</option>
+                    </select>
+                  </div>
+                )}
+
+                {propertyType === "wind" && (
+                  <div className="property-selected">
+                    <label>Type of Property - Wind:</label>
+                    <select name="wind-type" required>
+                      <option value="rooftop">Rooftop</option>
+                      <option value="existing">Existing</option>
+                      <option value="wind-farm">Wind Farm</option>
+                      <option value="highway">Highway</option>
+                      <option value="open-farm">Open Farm</option>
+                    </select>
+                  </div>
+                )}
+
 
                 {/* Individual or Company */}
                 <label>Are you an individual or company?</label>
@@ -150,17 +166,15 @@ const Contact = () => {
               ].map((item, index) => (
                 <div key={index}>
                   <div
-                    className={`faq-question ${
-                      activeQuestion === index ? "active" : ""
-                    }`}
+                    className={`faq-question ${activeQuestion === index ? "active" : ""
+                      }`}
                     onClick={() => toggleQuestion(index)}
                   >
                     {item.question}
                   </div>
                   <div
-                    className={`faq-answer ${
-                      activeQuestion === index ? "show" : ""
-                    }`}
+                    className={`faq-answer ${activeQuestion === index ? "show" : ""
+                      }`}
                   >
                     {item.answer}
                   </div>
