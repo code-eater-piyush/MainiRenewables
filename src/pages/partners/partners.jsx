@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./partners.css";
+import './partners.css'
 
 const PartnersPage = () => {
   const [showOptions, setShowOptions] = useState(false);

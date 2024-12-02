@@ -1,6 +1,7 @@
 import './services.css';
 import WindTurbine from '../../assets/WindTurbine.webp';
 import WaterTurbine from '../../assets/waterTurbine.webp';
+import { Link } from 'react-router-dom';
 
 const servicesData = [
   {
@@ -8,12 +9,14 @@ const servicesData = [
     title: 'Wind Turbine Design',
     description: 'Harness clean energy with our innovative wind turbine designs.',
     reverse: false, // Image on right, content on left
+    link: '/wind'
   },
   {
     img: WaterTurbine,
     title: 'Water Turbine Design',
     description: 'Efficient solutions for harnessing hydropower with advanced water turbines.',
     reverse: true, // Image on left, content on right
+    link: '/hydro'
   },
 ];
 
@@ -32,7 +35,7 @@ const Services = () => {
                 <div className="service-text">
                   <h2>{service.title}</h2>
                   <p>{service.description}</p>
-                  <button className="cta-button">Learn More</button>
+                  <button className="cta-button"><Link to={service.link}>Learn More</Link></button>
                 </div>
                 <div className="service-icon-container">
                   <img src={service.img} alt={service.title} className="service-icon" />
