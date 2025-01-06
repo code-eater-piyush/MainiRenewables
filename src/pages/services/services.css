@@ -71,8 +71,7 @@
 }
 
 .cta-button {
-  background-color: #0f3408; /* Primary button color */
-  color: white; /* Button text color */
+  background-color: black; /* Primary button color */
   border: none; /* Remove border */
   border-radius: 5px; /* Rounded button corners */
   padding: 10px 15px; /* Button padding */
@@ -80,8 +79,13 @@
   transition: background-color 0.3s; /* Smooth transition */
 }
 
+.cta-button a {
+  color: white; /* Make the text color white */
+  text-decoration: none; /* Remove the underline */
+}
+
 .cta-button:hover {
-  background-color: #0056b3; /* Darker shade on hover */
+  background-color: rgb(35, 33, 33); /* Darker shade on hover */
 }
 
 /* Reverse layout for odd items */
