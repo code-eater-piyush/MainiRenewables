@@ -24,14 +24,14 @@ const Home = () => {
                     loop
                     muted
                     playsInline
-                    className={`hero-video visible`}
+                    className={`hero-video ${isVideoActive? 'visible': 'hidden'}`}
                 >
                     <source src='/background.mp4' type="video/mp4"/>
                 </video>
 
                 {/* Image Background */}
                 <div
-                    className={`hero-image hidden`}
+                    className={`hero-image ${isVideoActive? 'hidden': 'visible'}`}
                     style={{
                         backgroundImage: `url(Home.jpg)`,
                     }}
