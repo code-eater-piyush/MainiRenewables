@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './home.css';
 import Mission from '../mission/Mission';
-import turbineImage from "../../assets/turbine.avif";
 import Services from '../services/Services';
 
 const Home = () => {
@@ -24,16 +23,17 @@ const Home = () => {
                     autoPlay
                     loop
                     muted
-                    className={`hero-video ${isVideoActive ? 'visible' : 'hidden'}`}
+                    playsInline
+                    className={`hero-video visible`}
                 >
-                    <source src="background.mp4" type="video/mp4"/>
+                    <source src='/background.mp4' type="video/mp4"/>
                 </video>
 
                 {/* Image Background */}
                 <div
-                    className={`hero-image ${!isVideoActive ? 'visible' : 'hidden'}`}
+                    className={`hero-image hidden`}
                     style={{
-                        backgroundImage: `url(https://plus.unsplash.com/premium_photo-1678167657597-665c6589a3a6?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)`,
+                        backgroundImage: `url(Home.jpg)`,
                     }}
                 ></div>
 

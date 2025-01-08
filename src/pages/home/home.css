@@ -8,10 +8,11 @@
     justify-content: center;
     text-align: center;
     overflow: hidden; /* Hide overflow content */
+    background: none;
+    z-index: auto;
 }
 
 /* Video Background */
-.hero-video,
 .hero-image {
     position: absolute;
     top: 0;
@@ -22,7 +23,19 @@
     z-index: -1; /* Place behind content */
     transition: opacity 1s ease-in-out; /* Smooth fade effect */
     opacity: 0; /* Initially hidden */
+    background-size: cover;
 }
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Ensure it stays behind the content */
+    opacity: 1; /* Ensure it is visible */
+  }
 
 /* Visible and hidden states */
 .hero-video.visible,
@@ -41,6 +54,7 @@
     background-position: center;
     background-repeat: no-repeat;
 }
+
 
 /* Main Content */
 .home-content {

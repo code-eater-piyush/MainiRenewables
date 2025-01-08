@@ -5,6 +5,12 @@
   margin: 0;
   padding: 0;
 }
+.main-content-wrapper, .no-select-text {
+  user-select: none;
+}
+.main-content-wrapper, .no-edit {
+  user-select: none;
+}
 
 body{
   font-family: 'Karla';
