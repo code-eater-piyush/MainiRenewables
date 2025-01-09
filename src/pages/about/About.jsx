@@ -1,64 +1,76 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import './about.css';
+import { useNavigate } from 'react-router-dom';
 
 const About = () => {
-  const contentRef = useRef(null); // Create a ref to the content
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible'); // Add the class when the element is in view
-        }
-      });
-    });
+  const handleClick = () => {
+    // Scroll to top before navigating
+    window.scrollTo(0, 0);
+    navigate('/contact');
+  };
 
-    const elements = contentRef.current.querySelectorAll('.slide-in');
-    elements.forEach(element => {
-      observer.observe(element); // Observe each element
-    });
-
-    return () => {
-      elements.forEach(element => {
-        observer.unobserve(element); // Clean up the observer
-      });
-    };
-  }, []);
 
   return (
-    <section id='about'>
-      <div className="about">
-        <div className="about-container">
-          <div className="banner">
-            <img src="about.jpg" alt="About Us" />
-            <div className="overlay"></div>
-            <div className="text-content">
-              <p>
-                Making Distributed Hydro in Highlands and Islands a Reality.
-              </p>
-              <button>Learn More</button>
-            </div>
-          </div>
-          <div className="content" ref={contentRef}>
-            <h1 className="slide-in">About Maini Renewables</h1>
-            <h2 className="slide-in">Company History</h2>
-            <p className="slide-in">
-              Founded in 2010, Maini Renewables has been at the forefront of renewable energy solutions in India. Our journey began with a vision to harness the power of nature and provide sustainable energy solutions for communities in highlands and islands.
-            </p>
-            
-            <h2 className="slide-in">Achievements</h2>
-            <ul className="slide-in">
-              <li>Installed over 100 renewable energy projects across India.</li>
-              <li>Awarded 'Best Renewable Energy Company' by Green Awards 2022.</li>
-              <li>Collaborated with local governments to implement community-based renewable energy systems.</li>
-            </ul>
+    <section id="about">
+    <div className="hero">
+      <h1>What We Do</h1>
+      <h2>Clean. Safe. Renewable.</h2>
+      <p>
+        Maini Renewables offers scalable small hydro solutions harnessing the natural flow of water without a dam. Our innovative technology ensures cost-effective and eco-friendly energy solutions for a sustainable future.
+      </p>
+    </div>
+      <div className="mission">
+  <h2>Our Mission</h2>
+  <p className="mission-tagline">"Empowering a sustainable future through innovative renewable energy solutions."</p>
+  <div className="mission-content">
+    <img src="About(Mission).avif" alt="Mission" className="mission-image" />
+    <p className="mission-text">
+    At Maini Renewables, our mission is to revolutionize energy production by harnessing renewable resources responsibly. We strive to create a greener future by providing efficient and sustainable energy solutions that benefit communities and preserve the planet for generations to come.
+    </p>
+  </div>
+</div>
 
-            <h2 className="slide-in">Goals</h2>
-            <p className="slide-in">
-              Our goal is to expand our reach and provide accessible renewable energy solutions to remote and underserved regions. We aim to innovate and develop new technologies that contribute to a sustainable future.
-            </p>
+      <div className="impact">
+        <h2>Our Impact</h2>
+        <div className="impact-stats">
+          <div className="stat">
+            <h3>94 tonnes</h3>
+            <p>Carbon dioxide saved annually per turbine</p>
+          </div>
+          <div className="stat">
+            <h3>15kW</h3>
+            <p>Power per turbine</p>
           </div>
         </div>
+        <p className="impact-text">
+          Beyond reducing carbon emissions, our installations provide communities with reliable energy, fostering economic growth and improving quality of life. Join us in making a tangible difference.
+        </p>
+      </div>
+
+      <div className="installations">
+        <h2>Where Can We Install Them?</h2>
+        <div className="grid">
+          <div className="grid-item">
+            <img src="River.jpg" alt="Natural Flow" />
+            <h3>Natural Flow</h3>
+            <p>Rivers, Tides, and Ocean Currents</p>
+          </div>
+          <div className="grid-item">
+            <img src="About(HydroDam).jpg" alt="Manmade Structures" />
+            <h3>Manmade Structures</h3>
+            <p>Irrigation canals, industrial and hydro dam tailrace channels</p>
+          </div>
+        </div>
+        <p className="installations-text">
+          Our solutions adapt seamlessly to diverse environments, ensuring compatibility and efficiency across natural and manmade water flows. Let us help you harness the power of water.
+        </p>
+      </div>
+
+      <div className="cta">
+        <h2>Join Us in Creating a Sustainable Future</h2>
+        <button onClick={handleClick}>Contact Us</button>
       </div>
     </section>
   );

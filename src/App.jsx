@@ -13,6 +13,7 @@ import Preloader from './components/preloader/preloader';
 import './index.css';
 import Wind from './pages/turbines/wind/Wind';
 import Hydro from './pages/turbines/hydro/Hydro';
+// import PartnerRegistrationForm from './components/form/partnerForm';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -49,6 +50,7 @@ function App() {
               <Route path="/partners" element={<PartnersPage />} />
               <Route path="/hydro" element={<Hydro />} />
               <Route path="/wind" element={<Wind />} />
+              {/* <Route path="/partnerForm" element={<PartnerRegistrationForm/>} /> */}
             </Routes>
             <Footer />
           </div>

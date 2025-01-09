@@ -1,9 +1,12 @@
 import { useState } from "react";
 import './partners.css'
+import { useNavigate } from "react-router-dom";
 
 const PartnersPage = () => {
   const [showOptions, setShowOptions] = useState(false);
   const [partners, setPartners] = useState([]); // To store partners dynamically
+
+  const navigate = useNavigate();
 
   const partnersData = {
     incubation: [
@@ -77,6 +80,10 @@ const PartnersPage = () => {
     }
   };
 
+  const handleSubmit = () => {
+    navigate('./partnerForm')
+  }
+
   return (
     <div className="container">
       <div className={`partners-page ${showOptions ? "blurred-background" : ""}`}>
@@ -108,7 +115,7 @@ const PartnersPage = () => {
           </div>
           <div className="partners-network">
             <h4>Join the partners network</h4>
-            <button className="become-partner-btn">Become a partner →</button>
+            <button className="become-partner-btn" onClick={handleSubmit}>Become a partner →</button>
           </div>
         </div>
       </div>
