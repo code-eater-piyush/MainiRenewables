@@ -13,7 +13,6 @@ import Preloader from './components/preloader/preloader';
 import './index.css';
 import Wind from './pages/turbines/wind/Wind';
 import Hydro from './pages/turbines/hydro/Hydro';
-// import PartnerRegistrationForm from './components/form/partnerForm';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,7 +21,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       document.querySelector(".preloader").classList.add("fade-out");
-      setTimeout(() => setLoading(false), 500); // Match fade-out duration
+      setTimeout(() => setLoading(false), 380); // Match fade-out duration
     }, 2000); // This controls how long the preloader stays visible
 
     return () => clearTimeout(timer);
@@ -50,7 +49,6 @@ function App() {
               <Route path="/partners" element={<PartnersPage />} />
               <Route path="/hydro" element={<Hydro />} />
               <Route path="/wind" element={<Wind />} />
-              {/* <Route path="/partnerForm" element={<PartnerRegistrationForm/>} /> */}
             </Routes>
             <Footer />
           </div>

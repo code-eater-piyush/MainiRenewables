@@ -31,7 +31,7 @@ html {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  background: linear-gradient(45deg, #ccebf8, #fff); /* Dark overlay */
   z-index: 9999; /* Ensure preloader is on top */
   display: flex;
   justify-content: center;

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import './partnerForm.css'
+import { useState } from 'react';
+import './PartnerRegistrationForm.css'
 
 function PartnerRegistrationForm() {
   const [formData, setFormData] = useState({
