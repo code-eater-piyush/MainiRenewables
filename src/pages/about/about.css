@@ -9,13 +9,13 @@
   .hero {
     position: relative;
     text-align: center;
-    background: url('about.jpg') no-repeat center center/cover;
-    padding: 6rem 1rem;  /* Increased padding for more space */
+    padding: 6rem 1rem;
     color: #fff;
-    border-radius: 15px; /* Add rounded corners to the section */
-    overflow: hidden; /* Ensures content doesn't overflow */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
+  
   
   /* Adding a dark overlay for better text readability */
   .hero::before {
