@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Navbar from './components/navbar/Navbar';
 import Sidebar from './components/sidebar/Sidebar';
@@ -13,6 +13,7 @@ import Preloader from './components/preloader/preloader';
 import './index.css';
 import Wind from './pages/turbines/wind/Wind';
 import Hydro from './pages/turbines/hydro/Hydro';
+import PageNotFound from './pages/NoPage/PageNotFound';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -37,25 +38,41 @@ function App() {
         <Preloader />
       ) : (
         <Router>
-          <div className="main-content-wrapper">
-            <Navbar toggleMenu={toggleMenu} />
-            <Sidebar isMenuOpen={isMenuOpen} />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/mission" element={<Mission />} />
-              <Route path="/solutions" element={<Solutions />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/partners" element={<PartnersPage />} />
-              <Route path="/hydro" element={<Hydro />} />
-              <Route path="/wind" element={<Wind />} />
-            </Routes>
-            <Footer />
-          </div>
+          <LocationAwareApp isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
         </Router>
       )}
     </>
   );
 }
+
+// This component is responsible for rendering the navbar, sidebar, and footer based on the current route
+const LocationAwareApp = ({ isMenuOpen, toggleMenu }) => {
+  const location = useLocation();
+  const is404Page = location.pathname === "/pageNotFound" || location.pathname === "/404";
+
+  return (
+    <div className="main-content-wrapper">
+      {/* Conditionally render Navbar and Sidebar based on route */}
+      {!is404Page && <Navbar toggleMenu={toggleMenu} />}
+      {!is404Page && <Sidebar isMenuOpen={isMenuOpen} />}
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/mission" element={<Mission />} />
+        <Route path="/solutions" element={<Solutions />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/partners" element={<PartnersPage />} />
+        <Route path="/hydro" element={<Hydro />} />
+        <Route path="/wind" element={<Wind />} />
+        {/* Catch-all 404 route */}
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+
+      {/* Conditionally render Footer based on route */}
+      {!is404Page && <Footer />}
+    </div>
+  );
+};
 
 export default App;

@@ -1,9 +1,10 @@
 import { useState } from "react";
-import './partners.css'
+import './partners.css';
 import { useNavigate } from "react-router-dom";
 
 const PartnersPage = () => {
   const [showOptions, setShowOptions] = useState(false);
+  const [showPartnerForm, setShowPartnerForm] = useState(false); // New state for partner form modal
   const [partners, setPartners] = useState([]); // To store partners dynamically
 
   const navigate = useNavigate();
@@ -70,8 +71,8 @@ const PartnersPage = () => {
   };
 
   const toggleOptions = (type) => {
-    setPartners(partnersData[type]); // Update partners based on the button clicked
-    setShowOptions(!showOptions); // Toggle the popup visibility
+    setPartners(partnersData[type]);
+    setShowOptions(!showOptions);
   };
 
   const closePopup = (e) => {
@@ -80,9 +81,10 @@ const PartnersPage = () => {
     }
   };
 
-  const handleSubmit = () => {
-    navigate('./partnerForm')
-  }
+  const handleFormSubmit = () => {
+    // Handle form submission here
+    setShowPartnerForm(false); // Close modal after form submission
+  };
 
   return (
     <div className="container">
@@ -94,13 +96,13 @@ const PartnersPage = () => {
           </div>
           <div className="right-section">
             <p>
-              Empowering partnerships and fostering teamwork to achieve
-              unparalleled excellence. Our dedicated approach and shared vision
-              create a synergy that fuels innovation and drives sustainable success
-              for all.
+              Empowering partnerships and fostering teamwork to achieve unparalleled excellence.
+              Our dedicated approach and shared vision create a synergy that fuels innovation and
+              drives sustainable success for all.
             </p>
           </div>
         </div>
+
         <div className="partners-bottom-section">
           <div className="partners-grid">
             <div className="partner-card" onClick={() => toggleOptions('incubation')}>
@@ -115,24 +117,60 @@ const PartnersPage = () => {
           </div>
           <div className="partners-network">
             <h4>Join the partners network</h4>
-            <button className="become-partner-btn" onClick={handleSubmit}>Become a partner →</button>
+            <button
+              className="become-partner-btn"
+              onClick={() => setShowPartnerForm(true)} // Open form modal
+            >
+              Become a partner →
+            </button>
           </div>
         </div>
       </div>
 
       {/* Backdrop and Popup */}
-      <div className={` backdrop ${showOptions ? "show" : ""}`} onClick={closePopup}>
+      <div className={`backdrop ${showOptions ? "show" : ""}`} onClick={closePopup}>
         {showOptions && (
-          <div className={`popup-options ${showOptions ? "show" : ""}`}>
+          <div className="popup-options">
             <div className="partners-list">
               {partners.map((partner, index) => (
                 <a key={index} href={partner.link} target="_blank" rel="noopener noreferrer">
-                  <img src={partner.src} alt={`Partner ${index}`} loading="lazy" className="partner-image" />
-                </a>))}
+                  <img src={partner.src} alt={`Partner ${index}`} className="partner-image" />
+                </a>
+              ))}
             </div>
           </div>
         )}
       </div>
+
+      {/* Partner Form Modal */}
+      {showPartnerForm && (
+        <div className="modal-backdrop">
+          <div className="modal">
+            <h2>Partner Form</h2>
+            <form onSubmit={handleFormSubmit}>
+              <label>
+                Name:
+                <input type="text" name="name" required />
+              </label>
+              <label>
+                Email:
+                <input type="email" name="email" required />
+              </label>
+              <label>
+                Message:
+                <textarea name="message" required></textarea>
+              </label>
+              <button type="submit">Submit</button>
+              <button
+                type="button"
+                onClick={() => setShowPartnerForm(false)} // Close modal
+              >
+                Close
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
