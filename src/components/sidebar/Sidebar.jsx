@@ -1,16 +1,35 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
-import "./sidebar.css";
+import './sidebar.css';
 
-const Sidebar = ({ isMenuOpen, toggleMenu }) => {
+const Sidebar = ({ isOpen, onClose }) => {
   return (
-    <div className={`sidebar ${isMenuOpen ? 'open' : ''}`}>
+    <div className={`sidebar ${isOpen ? 'open' : ''}`}>
+      {/* Close Button */}
+      <button className="close-btn" onClick={onClose}>
+        &times;
+      </button>
+
+      {/* Sidebar Menu */}
       <ul>
-        <li><Link to="/" onClick={toggleMenu}>Home</Link></li>
-        <li><Link to="/services" onClick={toggleMenu}>Services</Link></li>
-        <li><Link to="/about" onClick={toggleMenu}>About Us</Link></li>
-        <li><Link to="/mission" onClick={toggleMenu}>Mission</Link></li>
-        <li><Link to="/vision" onClick={toggleMenu}>Vision</Link></li>
-        <li><Link to="/contact" onClick={toggleMenu}>Contact</Link></li>
+        <li>
+          <Link to="/" onClick={onClose}>Home</Link>
+        </li>
+        <li>
+          <Link to="/services" onClick={onClose}>Services</Link>
+        </li>
+        <li>
+          <Link to="/about" onClick={onClose}>About Us</Link>
+        </li>
+        <li>
+          <Link to="/mission" onClick={onClose}>Mission</Link>
+        </li>
+        <li>
+          <Link to="/vision" onClick={onClose}>Vision</Link>
+        </li>
+        <li>
+          <Link to="/contact" onClick={onClose}>Contact</Link>
+        </li>
       </ul>
     </div>
   );

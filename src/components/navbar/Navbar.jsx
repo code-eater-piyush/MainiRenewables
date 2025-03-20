@@ -1,13 +1,20 @@
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { IoReorderThreeOutline } from 'react-icons/io5';
+import { IoReorderThreeOutline, IoClose } from 'react-icons/io5'; // Import both icons
 import Sidebar from '../sidebar/Sidebar';
-import logo from '../../assets/Maini-Renewables_Final.webp'
-import "./navbar.css";
+import logo from '../../assets/Maini-Renewables_Final.webp';
+import './navbar.css';
 
-const Navbar = ({ toggleMenu }) => {
+const Navbar = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
     <div className="navbar-container">
-      <Sidebar />
+      <Sidebar isOpen={isSidebarOpen} onClose={toggleMenu} />
       <div className="navbar">
         <div className="navbar-logo">
           <Link to="/">
@@ -24,7 +31,17 @@ const Navbar = ({ toggleMenu }) => {
           </ul>
           <ul>
             <li>
-              <IoReorderThreeOutline onClick={toggleMenu} />
+              {isSidebarOpen ? (
+                <IoClose
+                  className="hamburger-icon cross"
+                  onClick={toggleMenu}
+                />
+              ) : (
+                <IoReorderThreeOutline
+                  className="hamburger-icon"
+                  onClick={toggleMenu}
+                />
+              )}
             </li>
           </ul>
         </div>

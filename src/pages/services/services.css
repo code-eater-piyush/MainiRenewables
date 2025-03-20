@@ -1,94 +1,169 @@
+body {
+  background-color: #1A211E; /* Dark gray background for the body */
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: #ffffff; /* White text for the body */
+}
+
 #services {
-  background-color: #f4f4f4; /* Light background color */
-  padding: 50px 20px; /* Add padding for spacing */
+  background-color: #245243; /* Dark green background for the services section */
+  padding: 80px 20px; /* Increased padding for better spacing */
 }
 
 .services {
-  max-width: 1200px; /* Centered container */
-  margin: auto; /* Centering */
-  text-align: center; /* Center the text */
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
 }
 
 .services-container {
   margin-bottom: 40px;
-  color: orange;
 }
 
-.services-container h1 {
-  font-size: 3.5rem;
+.services-heading {
+  font-size: clamp(2rem, 6vw, 3.5rem);
   margin-bottom: 50px;
-  color: #333;
+  color: #ffffff; /* White for the heading */
+  position: relative;
+  display: inline-block;
+}
+
+.services-heading-design {
+  position: relative;
+  z-index: 1;
+}
+
+.services-heading-design::after {
+  content: '';
+  position: absolute;
+  bottom: -10px; /* Adjusted distance from text */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 4px;
+  background: #D8FB5A; /* Bright yellow-green underline */
+  border-radius: 2px;
 }
 
 .services-content {
-  display: flex; /* Flexbox layout for the service items */
-  flex-direction: column; /* Stack service items vertically */
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .service-item {
-  background-color: #ffffff; /* White background for cards */
-  border: 1px solid #ddd; /* Light border for cards */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  margin: 10px 0; /* Margin between cards */
-  display: flex; /* Flex container for layout */
-  align-items: center; /* Center vertically */
-  justify-content: space-between; /* Space between image and text */
-  padding: 20px;
-  transition: transform 0.3s; /* Animation effect */
+  background-color: #3C8A71; /* Green background for cards */
+  border: 1px solid #245243; /* Dark green border */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0;
+  transition: transform 0.3s, box-shadow 0.3s;
+  height: 500px;
+  overflow: hidden;
 }
 
 .service-item:hover {
-  transform: translateY(-5px); /* Lift effect on hover */
+  transform: translateY(-10px); /* Lift effect on hover */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
 }
 
 .service-text {
-  width: 50%; /* Half width for the text */
-  padding: 0 20px; /* Add some padding */
+  width: 100%;
+  padding: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
 }
 
 .service-text h2 {
-  font-size: 2.5rem; /* Font size for titles */
-  color: #333; /* Dark text color */
-  margin: 10px 0; /* Space above and below titles */
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  color: #ffffff; /* White for headings */
+  margin: 10px 0;
+  word-wrap: break-word;
 }
 
 .service-text p {
-  font-size: 1.2rem; /* Font size for descriptions */
-  color: #666; /* Gray text color */
-  margin-bottom: 20px; /* Space below the description */
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  color: #e0e0e0; /* Light gray for descriptions */
+  margin-bottom: 20px;
+  word-wrap: break-word;
+  line-height: 1.6;
 }
 
 .service-icon-container {
-  width: 50%; /* Half width for the image */
-  overflow: hidden; /* Hide overflow to ensure image fits */
+  width: 100%;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .service-icon {
-  width: 100%; /* Full width for the image */
-  height: auto; /* Automatic height for the image */
-  object-fit: cover; /* Cover the container while maintaining aspect ratio */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
 }
 
 .cta-button {
-  background-color: black; /* Primary button color */
-  border: none; /* Remove border */
-  border-radius: 5px; /* Rounded button corners */
-  padding: 10px 15px; /* Button padding */
-  cursor: pointer; /* Pointer on hover */
-  transition: background-color 0.3s; /* Smooth transition */
+  background-color: #D8FB5A; /* Bright yellow-green for buttons */
+  border: none;
+  border-radius: 8px; /* Rounded corners */
+  padding: 12px 24px; /* Increased padding */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 .cta-button a {
-  color: white; /* Make the text color white */
-  text-decoration: none; /* Remove the underline */
+  color: #1A211E; /* Dark gray text for buttons */
+  text-decoration: none;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  font-weight: 600; /* Bold text */
 }
 
 .cta-button:hover {
-  background-color: rgb(35, 33, 33); /* Darker shade on hover */
+  background-color: #c0e04a; /* Slightly darker yellow-green on hover */
+  transform: translateY(-2px); /* Lift effect on hover */
 }
 
-/* Reverse layout for odd items */
 .service-item.reverse {
-  flex-direction: row-reverse; /* Reverse the layout, image on the left */
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .service-item {
+    flex-direction: row;
+    align-items: stretch;
+    height: 350px;
+  }
+
+  .service-item.reverse {
+    flex-direction: row-reverse;
+  }
+
+  .service-text {
+    width: 50%;
+    text-align: left;
+    padding: 40px;
+  }
+
+  .service-icon-container {
+    width: 50%;
+    height: 100%;
+    margin-top: 0;
+  }
+
+  .service-icon {
+    height: 100%;
+    max-height: none;
+    border-radius: 0;
+  }
 }

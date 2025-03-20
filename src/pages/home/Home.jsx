@@ -5,44 +5,57 @@ import Services from '../services/Services';
 
 const Home = () => {
     const [isVideoActive, setIsVideoActive] = useState(false);
+    const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
     useEffect(() => {
-        // Toggle between video and image every 10 seconds
         const interval = setInterval(() => {
             setIsVideoActive((prev) => !prev);
-        }, 8000); 
+        }, 8000);
 
-        return () => clearInterval(interval); // Clean up on unmount
+        return () => clearInterval(interval);
     }, []);
 
     return (
-        <section id='home'>
+        <section id="home">
             <div className="home">
-                {/* Video Background */}
                 <video
                     autoPlay
                     loop
                     muted
                     playsInline
-                    className={`hero-video ${isVideoActive? 'visible': 'hidden'}`}
+                    className={`hero-video ${isVideoActive ? 'visible' : 'hidden'}`}
+                    onError={(e) => {
+                        e.target.style.display = 'none';
+                    }}
+                    onLoadedData={() => setIsVideoLoaded(true)}
+                    aria-label="Background video of renewable energy solutions"
+                    role="presentation"
                 >
-                    <source src='/background.mp4' type="video/mp4"/>
+                    <source src="/background.mp4" type="video/mp4" />
+                    <img src="/fallback-image.jpg" alt="Fallback Image" />
                 </video>
 
-                {/* Image Background */}
                 <div
-                    className={`hero-image ${isVideoActive? 'hidden': 'visible'}`}
+                    className={`hero-image ${isVideoActive ? 'hidden' : 'visible'}`}
                     style={{
                         backgroundImage: `url(Home.jpg)`,
                     }}
+                    aria-label="Background image of renewable energy solutions"
+                    role="img"
                 ></div>
 
-                {/* Main Content */}
+                {!isVideoLoaded && (
+                    <div className="loading-spinner">
+                        Loading...
+                    </div>
+                )}
+
                 <div className="home-content">
-                    <h1>Make renewable energy predictable..</h1>
-                    <h2>With small-scaled wind and hydrokinetic turbines for reliable power</h2>
+                    <h1>Make Renewable Energy Predictable</h1>
+                    <h2>With Small-Scaled Wind and Hydrokinetic Turbines for Reliable Power</h2>
                 </div>
             </div>
+
             <Services />
             <Mission />
         </section>
