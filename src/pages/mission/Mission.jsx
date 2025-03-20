@@ -4,7 +4,7 @@ import './mission.css';
 
 const Mission = () => {
   return (
-    <section id="mission">
+    <section id="missionsec">
       <div className="mission">
         <div className="mission-container">
           <h1 className="mission-heading">

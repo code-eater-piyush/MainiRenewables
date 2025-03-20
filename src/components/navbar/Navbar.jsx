@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { IoReorderThreeOutline, IoClose } from 'react-icons/io5'; // Import both icons
+import { IoReorderThreeOutline, IoClose } from 'react-icons/io5';
 import Sidebar from '../sidebar/Sidebar';
 import logo from '../../assets/Maini-Renewables_Final.webp';
 import './navbar.css';
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const navbarRef = useRef(null);
+
+  useEffect(() => {
+    const navbarHeight = navbarRef.current.offsetHeight;
+    document.body.style.paddingTop = `${navbarHeight}px`;
+  }, []);
 
   const toggleMenu = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -15,7 +21,7 @@ const Navbar = () => {
   return (
     <div className="navbar-container">
       <Sidebar isOpen={isSidebarOpen} onClose={toggleMenu} />
-      <div className="navbar">
+      <div className="navbar" ref={navbarRef}>
         <div className="navbar-logo">
           <Link to="/">
             <img src={logo} alt="Logo" />

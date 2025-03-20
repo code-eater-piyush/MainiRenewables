@@ -1,5 +1,5 @@
 .footer {
-  background-color: #333;
+  background-color: #1A211E;
   color: #fff;
   padding: 40px 20px;
   font-family: 'Poppins', sans-serif;
@@ -28,7 +28,7 @@
 .footer-section h2 {
   font-size: 1.5rem;
   margin-bottom: 10px;
-  color: #ff6600; /* Orange color to match the logo */
+  color: #3C8A71; /* Orange color to match the logo */
 }
 
 .footer-section p,
@@ -52,7 +52,7 @@
 }
 
 .footer-section ul li a:hover {
-  color: #ff6600; /* Orange color on hover */
+  color: #3C8A71; /* Orange color on hover */
 }
 
 .social-icons {
@@ -68,7 +68,7 @@
 }
 
 .social-icons a:hover {
-  color: #ff6600; /* Orange color on hover */
+  color: #3C8A71; /* Orange color on hover */
 }
 
 .footer-bottom {

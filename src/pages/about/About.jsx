@@ -29,14 +29,14 @@ const About = () => {
         </p>
       </div>
 
-      <div className="mission">
+      <div className="missionabout">
         <h2>Our Mission</h2>
-        <p className="mission-tagline">
+        <p className="missionabout-tagline">
           "Empowering a sustainable future through innovative renewable energy solutions."
         </p>
-        <div className="mission-content">
-          <img src={missionImage} alt="Mission" className="mission-image" />
-          <p className="mission-text">
+        <div className="missionabout-content">
+          <img src={missionImage} alt="Mission" className="missionabout-image" />
+          <p className="missionabout-text">
             At Maini Renewables, our mission is to revolutionize energy production by harnessing renewable resources responsibly. We strive to create a greener future by providing efficient and sustainable energy solutions that benefit communities and preserve the planet for generations to come.
           </p>
         </div>

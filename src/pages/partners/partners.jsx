@@ -2,6 +2,7 @@ import { useState } from "react";
 import './partners.css';
 import { useNavigate } from "react-router-dom";
 
+
 const PartnersPage = () => {
   const [showOptions, setShowOptions] = useState(false);
   const [showPartnerForm, setShowPartnerForm] = useState(false); // New state for partner form modal
