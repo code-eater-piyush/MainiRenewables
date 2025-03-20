@@ -1,56 +1,56 @@
-/* src/components/Sidebar.css */
-
+/* Sidebar Container */
 .sidebar {
-    position: fixed;
-    top: 0;
-    width: 250px;
-    left: -250px; /* Hidden by default */
-    height: 100%;
-    background-color: white;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
-    transition: left 0.3s ease;
-    overflow-y: auto;
-    z-index: 1000; /* Ensure it is on top of other elements */
-  }
-  
-  .sidebar.active {
-    left: 0; /* Slide in when active */
-  }
-  
-  .sidebar-menu {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .sidebar-menu li {
-    margin: 2rem;
-  }
-  
-  .sidebar-menu li a {
-    color: orange;
-    text-decoration: none;
-    font-size: 1.2rem;
-    display: block;
-    padding: 1rem;
-  }
-  
-  .sidebar-menu li a:hover {
-    background-color: #f0f0f0;
-  }
-  
-  .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    border-radius: 10px;
-    background-color: black;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
-    z-index: 1100; 
-  }
-  
+  position: fixed;
+  top: 0;
+  left: -100%; /* Hide sidebar by default */
+  width: 250px;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease; /* Smooth slide-in animation */
+  z-index: 1001; /* Ensure it appears above other content */
+}
+
+/* Sidebar Open State */
+.sidebar.open {
+  left: 0; /* Show sidebar */
+}
+
+/* Close Button */
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #333;
+}
+
+.close-btn:hover {
+  color: rgba(9, 112, 9, 0.8); /* Hover effect */
+}
+
+/* Sidebar Menu */
+.sidebar ul {
+  list-style: none;
+  padding: 20px;
+  margin-top: 50px; /* Space for close button */
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+  color: rgba(9, 112, 9, 0.8); /* Hover effect */
+}

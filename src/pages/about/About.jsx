@@ -1,6 +1,6 @@
 import React from 'react';
 import './about.css';
-import aboutImage from '../../assets/about.jpg'
+import aboutImage from '../../assets/about.jpg';
 import missionImage from '../../assets/About(Mission).avif';
 import riverImage from '../../assets/River.jpg';
 import hydroDamImage from '../../assets/About(HydroDam).jpg';

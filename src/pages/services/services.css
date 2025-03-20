@@ -1,94 +1,159 @@
 #services {
-  background-color: #f4f4f4; /* Light background color */
-  padding: 50px 20px; /* Add padding for spacing */
+  background-color: #f4f4f4;
+  padding: 50px 20px;
 }
 
 .services {
-  max-width: 1200px; /* Centered container */
-  margin: auto; /* Centering */
-  text-align: center; /* Center the text */
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
 }
 
 .services-container {
   margin-bottom: 40px;
-  color: orange;
 }
 
-.services-container h1 {
-  font-size: 3.5rem;
+.services-heading {
+  font-size: clamp(2rem, 6vw, 3.5rem);
   margin-bottom: 50px;
   color: #333;
+  position: relative;
+  display: inline-block;
+}
+
+.services-heading-design {
+  position: relative;
+  z-index: 1;
+}
+
+.services-heading-design::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 4px;
+  background: #1abc9c;
+  border-radius: 2px;
 }
 
 .services-content {
-  display: flex; /* Flexbox layout for the service items */
-  flex-direction: column; /* Stack service items vertically */
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .service-item {
-  background-color: #ffffff; /* White background for cards */
-  border: 1px solid #ddd; /* Light border for cards */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  margin: 10px 0; /* Margin between cards */
-  display: flex; /* Flex container for layout */
-  align-items: center; /* Center vertically */
-  justify-content: space-between; /* Space between image and text */
-  padding: 20px;
-  transition: transform 0.3s; /* Animation effect */
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0;
+  transition: transform 0.3s;
+  height: 500px;
+  overflow: hidden;
 }
 
 .service-item:hover {
-  transform: translateY(-5px); /* Lift effect on hover */
+  transform: translateY(-5px);
 }
 
 .service-text {
-  width: 50%; /* Half width for the text */
-  padding: 0 20px; /* Add some padding */
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
 }
 
 .service-text h2 {
-  font-size: 2.5rem; /* Font size for titles */
-  color: #333; /* Dark text color */
-  margin: 10px 0; /* Space above and below titles */
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  color: #2c3e50;
+  margin: 10px 0;
+  word-wrap: break-word;
 }
 
 .service-text p {
-  font-size: 1.2rem; /* Font size for descriptions */
-  color: #666; /* Gray text color */
-  margin-bottom: 20px; /* Space below the description */
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  color: #666;
+  margin-bottom: 20px;
+  word-wrap: break-word;
+  line-height: 1.5;
 }
 
 .service-icon-container {
-  width: 50%; /* Half width for the image */
-  overflow: hidden; /* Hide overflow to ensure image fits */
+  width: 100%;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .service-icon {
-  width: 100%; /* Full width for the image */
-  height: auto; /* Automatic height for the image */
-  object-fit: cover; /* Cover the container while maintaining aspect ratio */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
 }
 
 .cta-button {
-  background-color: black; /* Primary button color */
-  border: none; /* Remove border */
-  border-radius: 5px; /* Rounded button corners */
-  padding: 10px 15px; /* Button padding */
-  cursor: pointer; /* Pointer on hover */
-  transition: background-color 0.3s; /* Smooth transition */
+  background-color: #1abc9c;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 .cta-button a {
-  color: white; /* Make the text color white */
-  text-decoration: none; /* Remove the underline */
+  color: white;
+  text-decoration: none;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
 }
 
 .cta-button:hover {
-  background-color: rgb(35, 33, 33); /* Darker shade on hover */
+  background-color: #16a085;
 }
 
-/* Reverse layout for odd items */
 .service-item.reverse {
-  flex-direction: row-reverse; /* Reverse the layout, image on the left */
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .service-item {
+    flex-direction: row;
+    align-items: stretch;
+    height: 350px;
+  }
+
+  .service-item.reverse {
+    flex-direction: row-reverse;
+  }
+
+  .service-text {
+    width: 50%;
+    text-align: left;
+    padding: 40px;
+  }
+
+  .service-icon-container {
+    width: 50%;
+    height: 100%;
+    margin-top: 0;
+  }
+
+  .service-icon {
+    height: 100%;
+    max-height: none;
+    border-radius: 0;
+  }
 }

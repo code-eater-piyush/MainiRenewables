@@ -1,6 +1,6 @@
 import './services.css';
 import WindTurbine from '../../assets/WindTurbine.webp';
-import WaterTurbine from '../../assets/waterTurbine.webp';
+import WaterTurbine from '../../assets/waterTurbine.jpg';
 import { Link } from 'react-router-dom';
 
 const servicesData = [
@@ -8,14 +8,14 @@ const servicesData = [
     img: WindTurbine,
     title: 'Wind Turbine Design',
     description: 'Harness clean energy with our innovative wind turbine designs.',
-    reverse: false, // Image on right, content on left
+    reverse: false,
     link: '/wind'
   },
   {
     img: WaterTurbine,
     title: 'Water Turbine Design',
     description: 'Efficient solutions for harnessing hydropower with advanced water turbines.',
-    reverse: true, // Image on left, content on right
+    reverse: true,
     link: '/hydro'
   },
 ];
@@ -25,11 +25,13 @@ const Services = () => {
     <section id='services'>
       <div className="services">
         <div className="services-container">
-          <h1>Our Services</h1>
+          <h1 className="services-heading">
+            <span className="services-heading-design">Our Services</span>
+          </h1>
           <div className="services-content">
             {servicesData.map((service, index) => (
               <div
-                className={`service-item ${service.reverse ? 'reverse' : ''}`} // Add reverse class conditionally
+                className={`service-item ${service.reverse ? 'reverse' : ''}`}
                 key={index}
               >
                 <div className="service-text">
