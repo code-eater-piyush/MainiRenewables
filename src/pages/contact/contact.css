@@ -1,6 +1,6 @@
 .contact {
   padding: 30px 60px;
-  background-color: #245243; /* Dark green background */
+  background-color: #ffffff; /* White background */
 }
 
 .contact-container {
@@ -12,13 +12,13 @@
 }
 
 h2 {
-  color: #ffffff; /* Bright yellow-green for headings */
+  color: #ffffff; /* Dark gray for headings */
   margin-bottom: 20px;
   font-size: 2rem;
 }
 
 .form-container {
-  background-color: #1A211E; /* Medium green background */
+  background-color: #1A211E; /* Dark gray/black background */
   padding: 40px;
   border-radius: 8px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
@@ -42,7 +42,7 @@ h2 {
 .upper-area .right-side .tagline p {
   font-size: 6rem;
   margin-bottom: 30px;
-  color: #ffffff; /* Bright yellow-green for tagline */
+  color: #1A211E; /* Bright yellow-green for tagline */
 }
 
 form {
@@ -61,7 +61,7 @@ form select {
   padding: 10px;
   margin-bottom: 20px;
   border-radius: 8px;
-  border: 1px solid  #1A211E; /* Medium green border */
+  border: 1px solid #3C8A71; /* Medium green border */
   font-size: 1rem;
   background-color: #245243; /* Dark green background */
   color: #ffffff; /* White text */
@@ -101,13 +101,14 @@ form select {
   transition: all 0.3s ease;
   background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23D8FB5A' d='M0 7l10 10L20 7z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 15px center;
+  background-position: right 12px center; /* Adjust position */
+  background-size: 8px; /* Smaller triangular icon */
 }
 
 form select:hover,
 form select:focus {
   border-color: #D8FB5A; /* Bright yellow-green on hover/focus */
-  background-color:  #1A211E; /* Medium green background on hover/focus */
+  background-color: #1A211E; /* Medium green background on hover/focus */
 }
 
 .property-selected {
@@ -116,7 +117,7 @@ form select:focus {
 }
 
 .info {
-  background-color:  #1A211E; /* Medium green background */
+  background-color: #1A211E; /* Dark gray/black background */
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
@@ -143,7 +144,7 @@ form select:focus {
 }
 
 .map {
-  background-color: #1A211E; /* Medium green background */
+  background-color: #1A211E; /* Dark gray/black background */
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
@@ -156,7 +157,7 @@ form select:focus {
 }
 
 .faq-question {
-  background-color: #1A211E; /* Dark green background */
+  background-color: #1A211E; /* Dark gray/black background */
   padding: 15px 20px;
   margin: 10px 0;
   border-radius: 8px;

@@ -9,7 +9,7 @@
 .container {
   position: relative;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(45deg, #e0f7fa, #ffffff); /* Light blue gradient */
+  background: linear-gradient(45deg, #245243, #ffffff); /* Dark green to white gradient */
   padding: 20px;
 }
 
@@ -38,13 +38,13 @@
 
 .left-section h3 {
   font-size: 18px;
-  color: #3C8A71; /* Green for subheadings */
+  color: #ffffff; /* Medium green for subheadings */
   margin-top: 10px;
 }
 
 .right-section p {
   font-size: 16px;
-  color: #245243; /* Dark green for text */
+  color: #1A211E; /* Dark gray for text */
   max-width: 600px;
   line-height: 1.6;
 }
@@ -56,7 +56,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(26, 33, 30, 0.8); /* Dark gray with opacity */
+  background-color: rgba(36, 82, 67, 0.8); /* Dark green with opacity */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,18 +65,18 @@
 
 /* Modal Container */
 .modal {
-  background-color: #1A211E; /* Dark gray background */
+  background-color: #ffffff; /* White background */
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   max-width: 400px; /* Reduced width */
   width: 90%;
-  color: #ffffff; /* White text */
+  color: #1A211E; /* Dark gray text */
 }
 
 .modal h2 {
   font-size: 1.5rem; /* Smaller font */
-  color: #D8FB5A; /* Bright yellow-green for headings */
+  color: #3C8A71; /* Medium green for headings */
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -90,7 +90,7 @@
 
 .modal label {
   font-size: 0.9rem; /* Smaller font */
-  color: #ffffff; /* White text */
+  color: #1A211E; /* Dark gray text */
   font-weight: 500;
 }
 
@@ -113,7 +113,7 @@
 
 .modal input:focus,
 .modal textarea:focus {
-  border-color: #D8FB5A; /* Bright yellow-green on focus */
+  border-color: #3C8A71; /* Medium green on focus */
   outline: none;
 }
 
@@ -134,28 +134,28 @@
 }
 
 .modal button[type="submit"] {
-  background-color: #D8FB5A; /* Bright yellow-green for submit button */
-  color: #1A211E; /* Dark gray text */
+  background-color: #3C8A71; /* Medium green for submit button */
+  color: #ffffff; /* White text */
 }
 
 .modal button[type="submit"]:hover {
-  background-color: #c0e04a; /* Slightly darker yellow-green on hover */
+  background-color: #245243; /* Dark green on hover */
 }
 
 .modal button[type="button"] {
-  background-color: #3C8A71; /* Medium green for close button */
-  color: #ffffff; /* White text */
+  background-color: #D8FB5A; /* Bright yellow-green for close button */
+  color: #1A211E; /* Dark gray text */
   margin-top: 0.5rem;
 }
 
 .modal button[type="button"]:hover {
-  background-color: #2a6e5d; /* Slightly darker green on hover */
+  background-color: #c0e04a; /* Slightly darker yellow-green on hover */
 }
 
 label {
   display: block;
   margin-bottom: 0.5rem;
-  color: #245243; /* Dark green for labels */
+  color: #1A211E; /* Dark gray for labels */
   font-size: 0.9rem;
 }
 
@@ -164,7 +164,7 @@ textarea {
   width: 100%;
   padding: 0.75rem;
   margin-bottom: 1rem;
-  border: 1px solid #3C8A71; /* Green border */
+  border: 1px solid #3C8A71; /* Medium green border */
   border-radius: 8px;
   transition: border-color 0.2s;
   font-size: 1rem;
@@ -173,7 +173,7 @@ textarea {
 
 input:focus,
 textarea:focus {
-  border-color: #D8FB5A; /* Bright yellow-green on focus */
+  border-color: #3C8A71; /* Medium green on focus */
   outline: none;
 }
 
@@ -191,7 +191,7 @@ button {
 
 /* Primary Submit Button */
 button[type="submit"] {
-  background-color: #3C8A71; /* Green for buttons */
+  background-color: #3C8A71; /* Medium green for buttons */
   color: white;
 }
 
@@ -254,7 +254,7 @@ button[type="button"]:hover {
 
 .partner-card {
   background-color: #ffffff; /* White background */
-  border: 1px solid #3C8A71; /* Green border */
+  border: 1px solid #3C8A71; /* Medium green border */
   border-radius: 8px;
   padding: 15px 30px;
   height: 80px;
@@ -287,8 +287,8 @@ button[type="button"]:hover {
 }
 
 .become-partner-btn {
-  background-color: #D8FB5A; /* Bright yellow-green for buttons */
-  color: #1A211E; /* Dark gray text */
+  background-color: #3C8A71; /* Medium green for buttons */
+  color: #ffffff; /* White text */
   padding: 10px 20px;
   border: none;
   border-radius: 30px;
@@ -298,7 +298,7 @@ button[type="button"]:hover {
 }
 
 .become-partner-btn:hover {
-  background-color: #c0e04a; /* Slightly darker yellow-green on hover */
+  background-color: #245243; /* Dark green on hover */
 }
 
 .backdrop {
