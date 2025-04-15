@@ -9,7 +9,7 @@
 .container {
   position: relative;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(45deg, #245243, #ffffff); /* Dark green to white gradient */
+  background: linear-gradient(180deg, #245243, #ffffff); /* Dark green to white gradient */
   padding: 20px;
 }
 
@@ -415,5 +415,137 @@ button[type="button"]:hover {
   .become-partner-btn {
     padding: 8px 16px;
     font-size: 14px;
+  }
+}
+
+/* Popup Styles - Optimized */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(3px);
+}
+
+.backdrop.show {
+  display: flex;
+}
+
+.popup-options {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 1000px;
+  padding: 30px;
+  border: 3px solid #3C8A71;
+  position: relative;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.popup-title {
+  font-size: 1.5rem;
+  color: #245243;
+  text-align: center;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.partners-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  place-items: center;
+  width: 100%;
+}
+
+.partner-image {
+  width: 100%;
+  height: 100px;
+  min-height: 100px;
+  object-fit: contain;
+  padding: 15px;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.partner-image:hover {
+  transform: scale(1.05);
+  border-color: #3C8A71;
+  box-shadow: 0 6px 12px rgba(60, 138, 113, 0.2);
+}
+
+.popup-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #3C8A71;
+  color: white;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.popup-close:hover {
+  background: #245243;
+  transform: rotate(90deg);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .popup-options {
+    padding: 20px;
+  }
+  
+  .partner-image {
+    height: 80px;
+    min-height: 80px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .popup-options {
+    width: 95%;
+    padding: 15px;
+  }
+  
+  .partners-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .partner-image {
+    height: 70px;
+    min-height: 70px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }

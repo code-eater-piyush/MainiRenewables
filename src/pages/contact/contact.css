@@ -168,9 +168,7 @@ form select:focus {
   color: #ffffff; /* White text */
 }
 
-.faq-question:hover {
-  background-color: #3C8A71; /* Medium green on hover */
-}
+
 
 .faq-answer {
   display: none;

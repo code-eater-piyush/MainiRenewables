@@ -16,16 +16,16 @@ const Sidebar = ({ isOpen, onClose }) => {
           <Link to="/" onClick={onClose}>Home</Link>
         </li>
         <li>
-          <Link to="/services" onClick={onClose}>Services</Link>
+          <Link to="/solutions" onClick={onClose}>Solution</Link>
         </li>
         <li>
-          <Link to="/about" onClick={onClose}>About Us</Link>
+          <Link to="/Services" onClick={onClose}>Services</Link>
         </li>
         <li>
           <Link to="/mission" onClick={onClose}>Mission</Link>
         </li>
         <li>
-          <Link to="/vision" onClick={onClose}>Vision</Link>
+          <Link to="/about" onClick={onClose}>About Us</Link>
         </li>
         <li>
           <Link to="/contact" onClick={onClose}>Contact</Link>

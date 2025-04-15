@@ -14,6 +14,7 @@ import './index.css';
 import Wind from './pages/turbines/wind/Wind';
 import Hydro from './pages/turbines/hydro/Hydro';
 import PageNotFound from './pages/NoPage/PageNotFound';
+import CanalInstallation from './pages/canal-installation/canal-installation';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -65,6 +66,7 @@ const LocationAwareApp = ({ isMenuOpen, toggleMenu }) => {
         <Route path="/partners" element={<PartnersPage />} />
         <Route path="/hydro" element={<Hydro />} />
         <Route path="/wind" element={<Wind />} />
+        <Route path="/canal-installation" element={<CanalInstallation />} />
         {/* Catch-all 404 route */}
         <Route path="*" element={<PageNotFound />} />
       </Routes>

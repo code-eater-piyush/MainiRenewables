@@ -3,6 +3,7 @@ import WindTurbine from '../../assets/WindTurbine.webp';
 import WaterTurbine from '../../assets/waterTurbine.jpg';
 import { Link } from 'react-router-dom';
 
+
 const servicesData = [
   {
     img: WindTurbine,

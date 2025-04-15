@@ -1,6 +1,8 @@
 import React from 'react';
 import './solutions.css';
 import Mission from '../mission/Mission';
+import { Link } from 'react-router-dom';
+
 
 const Solutions = () => {
     return (
@@ -10,17 +12,15 @@ const Solutions = () => {
             </h1>
             <p className="section-description">Innovative and sustainable energy solutions tailored to your needs.</p>
 
-            {/* Canal Installation */}
             <div className="solution-card">
-                <img src="canal.avif" alt="Canal Installation" className="solution-image" />
-                <div className="solution-info">
-                    <h2>Canal Installation</h2>
-                    <p>Generate damless power by harnessing the kinetic energy of water.</p>
-                    <a href="/canal-installation" className="learn-more">Learn More &rarr;</a>
-                </div>
-            </div>
-
-            {/* Rooftop Installation */}
+    <img src="canal.avif" alt="Canal Installation" className="solution-image" />
+    <div className="solution-info">
+        <h2>Canal Installation</h2>
+        <p>Generate damless power by harnessing the kinetic energy of water.</p>
+        <Link to="/canal-installation" className="learn-more">Learn More &rarr;</Link>
+    </div>
+</div>
+            
             <div className="solution-card reverse">
                 <img src="rooftop.jpg" alt="Rooftop Installation" className="solution-image" />
                 <div className="solution-info">

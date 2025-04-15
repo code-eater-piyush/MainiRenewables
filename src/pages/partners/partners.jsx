@@ -1,12 +1,12 @@
 import { useState } from "react";
-import './partners.css';
 import { useNavigate } from "react-router-dom";
-
+import './partners.css';
 
 const PartnersPage = () => {
   const [showOptions, setShowOptions] = useState(false);
-  const [showPartnerForm, setShowPartnerForm] = useState(false); // New state for partner form modal
-  const [partners, setPartners] = useState([]); // To store partners dynamically
+  const [showPartnerForm, setShowPartnerForm] = useState(false);
+  const [partners, setPartners] = useState([]);
+  const [activeCategory, setActiveCategory] = useState('');
 
   const navigate = useNavigate();
 
@@ -73,7 +73,8 @@ const PartnersPage = () => {
 
   const toggleOptions = (type) => {
     setPartners(partnersData[type]);
-    setShowOptions(!showOptions);
+    setActiveCategory(type);
+    setShowOptions(true);
   };
 
   const closePopup = (e) => {
@@ -82,9 +83,19 @@ const PartnersPage = () => {
     }
   };
 
-  const handleFormSubmit = () => {
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
     // Handle form submission here
-    setShowPartnerForm(false); // Close modal after form submission
+    setShowPartnerForm(false);
+  };
+
+  const getCategoryTitle = () => {
+    switch(activeCategory) {
+      case 'incubation': return 'Incubation & Acceleration Partners';
+      case 'grants': return 'Granting Organizations';
+      case 'advisors': return 'Advisors & Knowledge Partners';
+      default: return 'Our Partners';
+    }
   };
 
   return (
@@ -106,13 +117,25 @@ const PartnersPage = () => {
 
         <div className="partners-bottom-section">
           <div className="partners-grid">
-            <div className="partner-card" onClick={() => toggleOptions('incubation')}>
+            <div 
+              className="partner-card" 
+              onClick={() => toggleOptions('incubation')}
+              style={{ borderTop: '4px solid #3C8A71' }}
+            >
               Incubation & Acceleration
             </div>
-            <div className="partner-card" onClick={() => toggleOptions('grants')}>
+            <div 
+              className="partner-card" 
+              onClick={() => toggleOptions('grants')}
+              style={{ borderTop: '4px solid #D8FB5A' }}
+            >
               Granting Organizations
             </div>
-            <div className="partner-card" onClick={() => toggleOptions('advisors')}>
+            <div 
+              className="partner-card" 
+              onClick={() => toggleOptions('advisors')}
+              style={{ borderTop: '4px solid #245243' }}
+            >
               Advisors & Knowledge
             </div>
           </div>
@@ -120,7 +143,7 @@ const PartnersPage = () => {
             <h4>Join the partners network</h4>
             <button
               className="become-partner-btn"
-              onClick={() => setShowPartnerForm(true)} // Open form modal
+              onClick={() => setShowPartnerForm(true)}
             >
               Become a partner →
             </button>
@@ -128,14 +151,31 @@ const PartnersPage = () => {
         </div>
       </div>
 
-      {/* Backdrop and Popup */}
+      {/* Partners Popup */}
       <div className={`backdrop ${showOptions ? "show" : ""}`} onClick={closePopup}>
         {showOptions && (
-          <div className="popup-options">
+          <div className="popup-options" onClick={(e) => e.stopPropagation()}>
+            <button className="popup-close" onClick={() => setShowOptions(false)}>
+              ×
+            </button>
+            <h3 className="popup-title">{getCategoryTitle()}</h3>
             <div className="partners-list">
               {partners.map((partner, index) => (
-                <a key={index} href={partner.link} target="_blank" rel="noopener noreferrer">
-                  <img src={partner.src} alt={`Partner ${index}`} className="partner-image" />
+                <a 
+                  key={index} 
+                  href={partner.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="partner-link"
+                >
+                  <img 
+                    src={partner.src} 
+                    alt={`Partner ${index}`} 
+                    className="partner-image" 
+                    onError={(e) => {
+                      e.target.src = '/placeholder-partner.png';
+                    }}
+                  />
                 </a>
               ))}
             </div>
@@ -145,29 +185,51 @@ const PartnersPage = () => {
 
       {/* Partner Form Modal */}
       {showPartnerForm && (
-        <div className="modal-backdrop">
-          <div className="modal">
-            <h2>Partner Form</h2>
+        <div className="modal-backdrop" onClick={() => setShowPartnerForm(false)}>
+          <div className="modal" onClick={(e) => e.stopPropagation()}>
+            <h2>Become a Partner</h2>
             <form onSubmit={handleFormSubmit}>
-              <label>
-                Name:
-                <input type="text" name="name" required />
-              </label>
-              <label>
-                Email:
-                <input type="email" name="email" required />
-              </label>
-              <label>
-                Message:
-                <textarea name="message" required></textarea>
-              </label>
-              <button type="submit">Submit</button>
-              <button
-                type="button"
-                onClick={() => setShowPartnerForm(false)} // Close modal
-              >
-                Close
-              </button>
+              <div className="form-group">
+                <label htmlFor="name">Name</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name" 
+                  placeholder="Your name or organization" 
+                  required 
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="email">Email</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  placeholder="your@email.com" 
+                  required 
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="message">How would you like to collaborate?</label>
+                <textarea 
+                  id="message" 
+                  name="message" 
+                  placeholder="Tell us about your interest in partnering..." 
+                  required
+                ></textarea>
+              </div>
+              <div className="form-buttons">
+                <button type="submit" className="submit-btn">
+                  Submit Application
+                </button>
+                <button 
+                  type="button" 
+                  className="cancel-btn"
+                  onClick={() => setShowPartnerForm(false)}
+                >
+                  Cancel
+                </button>
+              </div>
             </form>
           </div>
         </div>
