@@ -1,8 +1,8 @@
 import React from 'react';
 import './Wind.css';
-import wind11 from '../../assets/wind11.png';
-import wind22 from '../../assets/wind22.png';
-import wind33 from '../../assets/wind33.png';
+import wind11 from '../../../assets/wind11.png';
+import wind22 from '../../../assets/wind11.png';
+import wind33 from '../../../assets/wind11.png';
 
 
 const WindTurbine = () => {
